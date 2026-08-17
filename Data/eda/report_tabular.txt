@@ -1,0 +1,103 @@
+
+======================================================================
+1) CBC TEST DATASET  (tabular/anemia_cbc_ml_repo/cbc information.xlsx)
+======================================================================
+Shape: (500, 21)
+Cot: ['ID', 'WBC', 'LYMp', 'MIDp', 'NEUTp', 'LYMn', 'MIDn', 'NEUTn', 'RBC', 'HGB', 'HCT', 'MCV', 'MCH', 'MCHC', 'RDWSD', 'RDWCV', 'PLT', 'MPV', 'PDW', 'PCT', 'PLCR']
+
+So gia tri thieu (missing) theo cot:
+Khong co missing value
+
+So dong trung lap: 0
+
+Thong ke mo ta (describe):
+         mean     std    min     50%     max
+WBC      7.37    3.70   0.80    6.70    45.7
+LYMp    25.84   11.27   6.20   24.80    91.4
+MIDp     8.69    6.96   0.50    7.80    77.0
+NEUTp   77.51  236.63   0.70   66.95  5317.0
+LYMn     1.88    2.14   0.20    1.60    41.8
+MIDn     0.67    0.83   0.10    0.50    10.0
+NEUTn    5.14    4.60   0.50    4.40    79.0
+RBC      4.88    4.40   1.42    4.59    90.8
+HGB     11.74    5.63 -10.00   11.50    87.1
+HCT     46.15  167.99   2.00   37.10  3715.0
+MCV     82.18   42.32 -79.30   82.80   990.0
+MCH     37.46  177.88  10.90   25.70  3117.0
+MCHC    30.95    4.58  11.50   30.90    92.8
+RDWSD   38.08   18.79   7.20   37.20   390.0
+RDWCV   13.65    6.08   8.90   12.70   124.0
+PLT    171.22   61.67  11.30  163.50   508.0
+MPV     12.87   43.04   0.14    9.70   919.0
+PDW     13.73    4.35   8.40   13.30    97.0
+PCT      0.26    1.10   0.01    0.15    13.6
+PLCR    26.29    7.15   0.12   26.10    48.5
+
+So luong outlier theo IQR (1.5x) tung cot:
+  WBC       : 19 dong (3.8%)
+  LYMp      : 3 dong (0.6%)
+  MIDp      : 24 dong (4.8%)
+  NEUTp     : 9 dong (1.8%)
+  LYMn      : 26 dong (5.2%)
+  MIDn      : 41 dong (8.2%)
+  NEUTn     : 19 dong (3.8%)
+  RBC       : 18 dong (3.6%)
+  HGB       : 12 dong (2.4%)
+  HCT       : 15 dong (3.0%)
+  MCV       : 19 dong (3.8%)
+  MCH       : 18 dong (3.6%)
+  MCHC      : 18 dong (3.6%)
+  RDWSD     : 36 dong (7.2%)
+  RDWCV     : 27 dong (5.4%)
+  PLT       : 28 dong (5.6%)
+  MPV       : 12 dong (2.4%)
+  PDW       : 8 dong (1.6%)
+  PCT       : 23 dong (4.6%)
+  PLCR      : 8 dong (1.6%)
+
+Tuong quan cao (|r| > 0.85) giua cac chi so - canh bao da cong tuyen:
+
+>> Nhan xet: dataset nay KHONG co san cot nhan benh (target).
+>> Can tu sinh nhan (vd Anaemia = 1 neu HGB<11 hoac HCT<36%) hoac dung threshold lam-sang chuan.
+
+======================================================================
+2) ANEMIA DATASET  (tabular/anemia_ml_basic_repo/anemia data from Kaggle.csv)
+======================================================================
+Shape: (1421, 6)
+Cot: ['Gender', 'Hemoglobin', 'MCH', 'MCHC', 'MCV', 'Result']
+
+So gia tri thieu theo cot:
+Khong co missing value
+
+So dong trung lap: 887
+
+Phan bo Gender (0/1):
+Gender
+1    740
+0    681
+Name: count, dtype: int64
+
+Phan bo nhan Result (target):
+Result
+0    801
+1    620
+Name: count, dtype: int64
+Ty le can bang lop (%): {0: 56.4, 1: 43.6}
+
+Thong ke mo ta cac chi so huyet hoc:
+             mean   std   min   50%    max
+Hemoglobin  13.41  1.97   6.6  13.2   16.9
+MCH         22.91  3.97  16.0  22.7   30.0
+MCHC        30.25  1.40  27.8  30.4   32.5
+MCV         85.52  9.64  69.4  85.3  101.6
+
+Hemoglobin trung binh/min/max theo Gender va Result (kiem tra threshold theo gioi):
+                mean   min   max  count
+Gender Result                          
+0      0       14.46  12.0  16.9    473
+       1       10.95   6.6  11.9    208
+1      0       15.28  13.5  16.9    328
+       1       11.97   9.0  13.4    412
+
+>> Nhan xet: dataset chi co 5 feature huyet hoc (thieu RBC, WBC, PLT, RDW... so voi schema 18 chi so trong overview).
+>> Chi du de phan biet 'co/khong thieu mau', KHONG du de phan loai 9 loai thieu mau rieng biet.

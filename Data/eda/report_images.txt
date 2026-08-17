@@ -1,0 +1,96 @@
+
+======================================================================
+1) MDS BONE MARROW DATASET (images/mds_bone_marrow/extracted)
+======================================================================
+Tong so anh: 25009
+Tong so lop (co anh): 54
+
+So anh theo tung lop (sap xep giam dan):
+  main\Mature lymphocyte                       :   3958  (15.83%)
+  main\Late erythroblast                       :   3555  (14.21%)
+  main\Smudge cell                             :   2215  ( 8.86%)
+  main\Band neutrophil                         :   2208  ( 8.83%)
+  main\Intermediate erythroblast               :   2084  ( 8.33%)
+  main\Segmented neutrophil                    :   1743  ( 6.97%)
+  main\Neutrophilic metamyelocyte              :   1291  ( 5.16%)
+  main\Myeloblast                              :   1045  ( 4.18%)
+  add\Smudge cell                              :    912  ( 3.65%)
+  main\Neutrophilic myelocyte                  :    828  ( 3.31%)
+  main\Early erythroblast                      :    740  ( 2.96%)
+  main\Monocyte                                :    734  ( 2.93%)
+  main\Promyelocyte                            :    429  ( 1.72%)
+  main\Dysplastic erythroblast                 :    354  ( 1.42%)
+  main\Small megakaryocyte                     :    288  ( 1.15%)
+  main\Plasma cell                             :    228  ( 0.91%)
+  add\Intermediate erythroblast                :    226  ( 0.90%)
+  add\Late erythroblast                        :    212  ( 0.85%)
+  main\Micromegakaryocyte                      :    210  ( 0.84%)
+  main\Dysplastic granulocyte                  :    178  ( 0.71%)
+  add\Mature lymphocyte                        :    154  ( 0.62%)
+  main\Eosinophilic metamyelocyte              :    148  ( 0.59%)
+  add\Myeloblast                               :    147  ( 0.59%)
+  main\Mitosis                                 :    123  ( 0.49%)
+  add\Dysplastic erythroblast                  :    110  ( 0.44%)
+  main\Segmented eosinophil                    :     96  ( 0.38%)
+  main\Segmented basophil                      :     88  ( 0.35%)
+  add\Segmented neutrophil                     :     60  ( 0.24%)
+  main\Band eosinophil                         :     59  ( 0.24%)
+  add\Neutrophilic metamyelocyte               :     56  ( 0.22%)
+  main\Unclassified cell                       :     55  ( 0.22%)
+  add\Monocyte                                 :     53  ( 0.21%)
+  main\Proerythroblast                         :     47  ( 0.19%)
+  add\Early erythroblast                       :     46  ( 0.18%)
+  add\Neutrophilic myelocyte                   :     45  ( 0.18%)
+  main\Eosinophilic myelocyte                  :     45  ( 0.18%)
+  add\Promyelocyte                             :     43  ( 0.17%)
+  add\Band neutrophil                          :     35  ( 0.14%)
+  main\Promonocyte                             :     33  ( 0.13%)
+  add\Dysplastic granulocyte                   :     22  ( 0.09%)
+  main\Blast, NOC                              :     22  ( 0.09%)
+  main\Monoblast                               :     19  ( 0.08%)
+  add\Plasma cell                              :     11  ( 0.04%)
+  main\Megakaryocyte                           :     11  ( 0.04%)
+  add\Eosinophilic metamyelocyte               :      8  ( 0.03%)
+  add\Mitosis                                  :      7  ( 0.03%)
+  add\Small megakaryocyte                      :      6  ( 0.02%)
+  add\Megakaryocyte                            :      5  ( 0.02%)
+  add\Segmented eosinophil                     :      4  ( 0.02%)
+  main\Megaloblastic late erythroblast         :      4  ( 0.02%)
+  add\Proerythroblast                          :      3  ( 0.01%)
+  main\Histiocyte                              :      3  ( 0.01%)
+  add\Segmented basophil                       :      2  ( 0.01%)
+  main\Dysplastic megakaryocyte                :      1  ( 0.00%)
+
+Lop nhieu anh nhat: main\Mature lymphocyte (3958 anh)
+Lop it anh nhat:    main\Dysplastic megakaryocyte (1 anh)
+Ty le mat can bang (max/min): 3958.0x
+
+>> Nhan xet: can kiem tra ky cac lop <100 anh - qua it de train rieng, nen gop nhom hoac dung few-shot/augmentation.
+
+======================================================================
+2) TXL-PBC DATASET (images/txl_pbc_repo/TXL-PBC)
+======================================================================
+
+-- Split 'train': 882 anh --
+   Tong so bounding box: 12510
+   Phan bo theo class_id (YOLO format): {'0': 908, '1': 11220, '2': 382}
+
+-- Split 'val': 252 anh --
+   Tong so bounding box: 3752
+   Phan bo theo class_id (YOLO format): {'0': 257, '1': 3383, '2': 112}
+
+-- Split 'test': 126 anh --
+   Tong so bounding box: 1881
+   Phan bo theo class_id (YOLO format): {'0': 133, '1': 1699, '2': 49}
+
+Ten cac lop (classes.txt): ['0 White Blood Cell (WBC)', '1 Red Blood Cell (RBC)', '2 Platelet']
+
+Noi dung data.yaml:
+train: ./images/train/
+val: ./images/val/
+test: ./images/test/
+nc: 3
+names: ['WBC', 'RBC','Platelets']
+
+>> Nhan xet: day la bai toan OBJECT DETECTION (bounding box), khong phai classification.
+>> Chi co 3 lop (WBC/RBC/Platelet) - muon phan loai further (neutrophil/eosinophil...) phai dung nguon khac (vd Raabin, PBC Barcelona).
