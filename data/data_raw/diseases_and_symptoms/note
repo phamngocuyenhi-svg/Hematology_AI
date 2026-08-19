@@ -1,0 +1,6 @@
+Note: 
+- file diseases_and_symptoms.csv được tách và hiển thị với 2 phần chỉ để hiển thị trên github
+- Data gốc được sử dụng trong quá trình eda và cleaning không được hiển thị trên github vì lý do kích cỡ 
+- file diseases_and_symptoms_1.csv chứa 125,000 dòng dữ liệu
+- file diseases_and_symptoms_2.csv chứa phần còn lại
+File diseases_and_symptoms_cleaned.csv là file hoàn thiện không bị tách
