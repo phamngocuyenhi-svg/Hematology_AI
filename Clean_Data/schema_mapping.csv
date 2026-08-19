@@ -1,0 +1,23 @@
+canonical_name,unit,cbc_test_dataset,anemia_dataset,kaggle_cbc_vizeno,kaggle_covid_cbc_clean,physionet_sepsis_clean,nhanes_cbc,rheumatic_dataverse_clean
+age_years,years,,,Age,age,Age,Age,Age
+gender,1=Nam/2=Nu hoac 0/1 tuy nguon - CAN CHUAN HOA,,Gender,Gender,gender,Gender,Gender,Gender
+wbc_10e3_ul,10^3/uL,WBC,,White_Blood_Cells,wbc,WBC,LBXWBCSI,
+rbc_10e6_ul,10^6/uL,RBC,,Red_Blood_Cells,,,LBXRBCSI,
+hemoglobin_g_dl,g/dL,HGB,Hemoglobin,Hemoglobin,,Hgb,LBXHGB,
+hematocrit_pct,%,HCT,,,,Hct,LBXHCT,
+mcv_fl,fL,MCV,MCV,MCV,,,LBXMCVSI,
+mch_pg,pg,MCH,MCH,MCH,,,LBXMCHSI,
+mchc_g_dl,g/dL,MCHC,MCHC,MCHC,,,LBXMC,
+rdw_pct,%,RDWCV,,,rdw,,LBXRDW,
+platelet_10e3_ul,10^3/uL,PLT,,Platelet_Count,platelet_count,Platelets,LBXPLTSI,
+mpv_fl,fL,MPV,,,,,LBXMPSI,
+neutrophil_pct,%,NEUTp,,,,,LBXNEPCT,
+lymphocyte_pct,%,LYMp,,,,,LBXLYPCT,
+lymphocyte_count,10^3/uL,LYMn,,,lymphocyte_count,,LBDLYMNO,
+neutrophil_count,10^3/uL,NEUTn,,,neutrophils_count,,LBDNENO,
+crp_mg_l,mg/L,,,,,,,CRP
+esr_mm_hr,mm/hr,,,,,,,ESR
+bilirubin_total_mg_dl,mg/dL,,,,,Bilirubin_total,,
+fibrinogen_mg_dl,mg/dL,,,,,Fibrinogen,,
+ptt_sec,"giay (~aPTT, can xac minh tuong duong)",,,,,PTT,,
+disease_label,Y NGHIA KHAC NHAU giua cac nguon - KHONG gop chung thanh 1 cot,,Result (nhi phan: co/khong thieu mau),,outcome (Recovered/Not Recovered - COVID),ever_sepsis (nhiem trung huyet),,Disease (7 lop tu mien)
