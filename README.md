@@ -1,8 +1,3 @@
-from pathlib import Path
-
-readme = r'''<div align="center">
-  <img src="https://img.icons8.com/?size=512&id=T256B7gC0I20&format=png" width="100" alt="AI Healthcare Icon" />
-
   <h1>🩸 HỆ THỐNG AI HỖ TRỢ CHẨN ĐOÁN SƠ BỘ BỆNH LÝ HUYẾT HỌC 🤖</h1>
 
   <p>
